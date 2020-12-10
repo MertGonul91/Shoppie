@@ -14,7 +14,7 @@ const orderSchema = mongoose.Schema(
         img: { type: String, required: true },
         price: { type: Number, required: true },
         product: {
-          type: mmongoose.Schema.Types.ObjectId,
+          type: mongoose.Schema.Types.ObjectId,
           required: true,
           ref: 'Product',
         },
@@ -52,7 +52,7 @@ const orderSchema = mongoose.Schema(
       default: 0.0,
     },
     isPaid: {
-      type: Booelan,
+      type: Boolean,
       required: true,
       default: false,
     },
