@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import FormContainer from '../components/FormContainer';
 
 const ShippingScreen = ({ history }) => {
-  const [address, setAdress] = useState('');
+  const [address, setAddress] = useState('');
   const [city, setCity] = useState('');
   const [postalCode, setPostalCode] = useState('');
   const [country, setCountry] = useState('');
@@ -12,13 +12,13 @@ const ShippingScreen = ({ history }) => {
     <FormContainer>
       <h1>Shipping</h1>
       <Form>
-        <Form.Group controlId='name'>
-          <Form.Label>Name</Form.Label>
+        <Form.Group controlId='adress'>
+          <Form.Label>address</Form.Label>
           <Form.Control
-            type='name'
-            placeholder='Enter name'
-            value={name}
-            onChange={(e) => setName(e.target.value)}
+            type='text'
+            placeholder='Enter address'
+            value={address}
+            onChange={(e) => setAddress(e.target.value)}
           ></Form.Control>
         </Form.Group>
       </Form>
