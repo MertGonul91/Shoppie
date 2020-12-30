@@ -1,13 +1,13 @@
 import asyncHandler from 'express-async-handler';
 import Order from '../models/orderModel.js';
 
-// @desc Create new order
-// @route POST /api/orders
-// @access Private
+// @desc    Create new order
+// @route   POST /api/orders
+// @access  Private
 const addOrderItems = asyncHandler(async (req, res) => {
   const {
     orderItems,
-    shippingAdress,
+    shippingAddress,
     paymentMethod,
     itemsPrice,
     taxPrice,
@@ -23,16 +23,17 @@ const addOrderItems = asyncHandler(async (req, res) => {
     const order = new Order({
       orderItems,
       user: req.user._id,
-      shippingAdress,
+      shippingAddress,
       paymentMethod,
-      taxPrice,
       itemsPrice,
+      taxPrice,
       shippingPrice,
       totalPrice,
     });
 
     const createdOrder = await order.save();
-    res.status(201).json(createOrder);
+
+    res.status(201).json(createdOrder);
   }
 });
 
